@@ -19,7 +19,7 @@ var sEl;
 var validAmount = 0;
 
 async function getQuizData(quizId) {
-    const url = "http://127.0.0.1:5000/getquiz?quizid=" + quizId;
+    const url = "https://roudes.eu.pythonanywhere.com/getquiz?quizid=" + quizId;
     try {
       const response = await fetch(url);
       if (response.status == 400)
