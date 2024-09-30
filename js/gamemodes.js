@@ -29,19 +29,19 @@ async function getQuizData(quizId) {
 }
 
 cardsBtn.addEventListener("click", () =>{
-    document.location = "/cards.html?quizid="+quizIdSearch;
+    document.location = "/QuizApp/cards.html?quizid="+quizIdSearch;
 });
 typeBtn.addEventListener("click", () =>{
-    document.location = "/typing.html?quizid="+quizIdSearch;
+    document.location = "/QuizApp/typing.html?quizid="+quizIdSearch;
 });
 multichoiceBtn.addEventListener("click", () =>{
-    document.location = "/multichoice.html?quizid="+quizIdSearch;
+    document.location = "/QuizApp/multichoice.html?quizid="+quizIdSearch;
 });
 matchBtn.addEventListener("click", () =>{
-    document.location = "/match.html?quizid="+quizIdSearch;
+    document.location = "/QuizApp/match.html?quizid="+quizIdSearch;
 });
 examBtn.addEventListener("click", () =>{
-    document.location = "/exam.html?quizid="+quizIdSearch;
+    document.location = "/QuizApp/exam.html?quizid="+quizIdSearch;
 });
 
 getQuizData(quizIdSearch)
