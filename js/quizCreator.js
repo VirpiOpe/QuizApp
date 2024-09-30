@@ -141,7 +141,7 @@ function sendQuiz(quizJson)
     }
     
     // The URL of your server endpoint
-    const url = 'http://127.0.0.1:5000/createquiz';
+    const url = 'https://roudes.eu.pythonanywhere.com/createquiz';
 
     // The data you want to send in JSON format
     const data = {
