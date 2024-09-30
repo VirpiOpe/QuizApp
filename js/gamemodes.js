@@ -9,7 +9,7 @@ const currentUrl = new URL(location.href);
 const quizIdSearch = currentUrl.searchParams.get("quizid");
 
 async function getQuizData(quizId) {
-    const url = "http://127.0.0.1:5000/getquiz?quizid=" + quizId;
+    const url = "https://roudes.eu.pythonanywhere.com/getquiz?quizid=" + quizId;
     try {
       const response = await fetch(url);
       if (response.status == 400)
