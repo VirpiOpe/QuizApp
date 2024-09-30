@@ -1,0 +1,147 @@
+/* General Styles */
+body {
+    background-color: #1E1E1E;
+    color: #E0E0E0;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+    color: #E0E0E0;
+}
+
+/* Links */
+a {
+    color: #1E90FF;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #1C75D0;
+}
+
+/* Buttons */
+button {
+    background-color: #1E90FF;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: #1C75D0;
+}
+
+/* Borders */
+.border-light {
+    border-color: #3D3D3D;
+}
+
+/* Forms */
+input, textarea {
+    background-color: #2C2C2C;
+    color: #E0E0E0;
+    border: 2px solid #3D3D3D;
+    padding: 10px;
+    border-radius: 5px;
+    transition: 0.4s;
+}
+
+select {
+    background-color: #2C2C2C;
+    color: #E0E0E0;
+    border: 2px solid #3D3D3D;
+    border-radius: 5px;
+    transition: 0.4s;
+}
+
+input:focus, textarea:focus {
+    transition: 0.4s;
+    outline: none;
+    border:2px solid #1E90FF;
+    background-color: #2C2C2C;
+}
+
+/* Alerts */
+.success {
+    color: #4CAF50;
+}
+
+.warning {
+    color: #FF9800;
+}
+
+.error {
+    color: #F44336;
+}
+
+
+.topbar
+{
+    background-color: rgb(39, 39, 39);
+    position: absolute;
+    height: 60px;
+    width: 100%;
+    border-bottom: 1px solid rgb(95, 95, 95);
+}
+
+.card
+{
+    background-color: #1E1E1E;
+    border: 1px solid rgb(49, 49, 49);
+    box-shadow: 0px 5px 10px #1b1b1b;
+    
+}
+.card:hover
+{
+    box-shadow: 0px 0px 20px #080808;
+}
+
+
+.flippableCard
+{
+    background-color: #222222;
+    border: 1px solid rgb(49, 49, 49);
+    box-shadow: 0px 5px 10px #0a0a0a;
+}
+
+.arrowIcon
+{
+    color: #E0E0E0;
+}
+
+.roundButton
+{
+    background-color: #222222;
+    box-shadow: 0px 10px 20px #0a0a0a;
+}
+
+.accountIcon
+{
+    color: gray;
+}
+
+.quizWordsInputDiv
+{
+    background-color: #222222;
+    border: 1px solid rgb(49, 49, 49);
+}
+.quizWordsInputDivStyle
+{
+    background-color: #222222;
+    border: 1px solid rgb(49, 49, 49);
+}
+
+.inputContainer
+{
+    background-color: #222222;
+    box-shadow: 0px 5px 10px #0a0a0a;
+}
+
+.choiceContainer
+{
+    background-color: #222222;
+    box-shadow: 0px 5px 10px #0a0a0a;
+}

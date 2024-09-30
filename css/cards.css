@@ -1,0 +1,97 @@
+body{
+    overflow: hidden;
+}
+
+#progressHeader
+{
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-100%);
+
+}
+
+.flippableCard{
+    position: absolute;
+    background-color: aqua;
+    box-shadow: 5px 5px 20px #8b8b8b;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 800px;
+    height: calc(100% - 300px);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+
+}
+
+@keyframes flipCardAnim {
+    50%{
+        transform: translateX(-50%) scaleX(0%) scaleY(110%);
+    }
+    100%{
+        transform: translateX(-50%) scaleX(100%);
+    }
+}
+
+.cardFlipTrigger{
+    animation: flipCardAnim 0.25s linear forwards;
+}
+
+.controlButtons
+{
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    width: 140px;
+    height: 60px;
+    transform: translateX(-50%);
+    
+}
+
+
+.animate
+{
+    animation: 1.5s scrollAnimation forwards linear;
+}.animateBack
+{
+    animation: 1.5s scrollAnimation backwards linear;
+}
+
+@keyframes scrollAnimation {
+    0% {
+      left: 50%; /* Start at center */
+      transform: translateX(-50%);
+      opacity: 1;
+    }
+    20% {
+      left: -200%; /* Scroll to the left */
+      opacity: 0; /* Start to disappear */
+    }
+    30% {
+      left: 100%; /* Move to the right off-screen */
+      opacity: 0; /* Keep it hidden */
+    }
+    40% {
+      left: 300%; /* Reappear on the right, still hidden */
+      
+    }
+    60% {
+        opacity: 1;
+        left: 50%; /* Move back to center */
+      transform: translateX(-50%);
+      opacity: 1;
+    }
+    100% {
+      left: 50%; /* End at center */
+      transform: translateX(-50%);
+      opacity: 1;
+    }
+  }
+

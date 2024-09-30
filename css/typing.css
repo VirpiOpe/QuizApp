@@ -1,0 +1,226 @@
+.wordInput
+{
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 43px;
+    transition: 0.2s;
+    border-radius: 60px;
+    border: 1px solid #A4A4A4;
+    font-size: 25px;
+    color: #4F4F4F;
+    padding-left: 20px;
+}
+
+.wordInput:focus
+{
+    border: 1px solid #4F4F4F;
+}
+
+.wordInput::placeholder
+{
+    color: #A4A4A4;
+    font-size: 25px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+}
+
+.inputContainer
+{
+    position: absolute;
+    box-shadow: 5px 5px 20px #8b8b8b;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 800px;
+    height: calc(100% - 300px);
+    border-radius: 10px;
+    border: 1px solid #A4A4A4;
+}
+
+
+.submitButton
+{
+    position: absolute;
+    left: 50%;
+    bottom: 40px;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 54px;
+    border-radius: 60px;
+    background-color: transparent;
+    border: 1px solid #A4A4A4;
+    color: #4F4F4F;
+    font-size: 25px;
+}
+
+.submitButton:hover
+{
+    border: 1px solid #4F4F4F;
+    background-color: transparent;
+}
+
+.wordHeader
+{
+    position: absolute;
+    margin-left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: -150px;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #4F4F4F;
+}
+
+.wrongWord
+{
+    color: #DE0000;
+    border: 1px solid #DE0000;
+    transition: 0.3s;
+}
+
+.wrongWord button:hover
+{
+    border: 2px solid #DE0000;
+    transition: 0.3s;
+}
+
+.wrongWord.wordInput::placeholder
+{
+    color: #DE0000;
+}
+
+.wrongWord h1
+{
+    border: none;
+}
+
+.rightWord
+{
+    color: #4CAF50;
+    border: 1px solid #4CAF50;
+    transition: 0.3s;
+}
+
+button.rightWord:hover
+{
+    border: 2px solid #4CAF50;
+}
+
+.rightWord.wordInput::placeholder
+{
+    color: #4CAF50;
+}
+
+.rightWord h1
+{
+    border: none;
+}
+
+.rightWordContainer
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80px;
+    margin-top: 100px;
+    transition: 0.2s;
+    border-radius: 15px;
+    border: 1px solid #A4A4A4;
+    font-size: 25px;
+    color: #4F4F4F;
+    padding-left: 20px;
+    background-color: transparent;
+    border: 1px solid #DE0000;
+    visibility:hidden;
+}
+
+.rightWordText
+{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-105%);
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    color: #DE0000;
+}
+
+#progressHeader
+{
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-100%);
+
+}
+
+.swapLangBtn
+{
+    position: absolute;
+    background-color: transparent;
+    color: #4F4F4F;
+    border-radius: 60px;
+    width: 50px;
+    height: 50px;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: -70px;
+}
+.swapLangBtn:hover
+{
+    background-color: #8b8b8b;
+}
+.swapLangIcn
+{
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    transform: scale(1.5) translate(-25%,-25%);
+}
+
+.animate
+{
+    animation: 1.5s scrollAnimation forwards linear;
+}
+
+@keyframes scrollAnimation {
+    0% {
+      left: 50%; /* Start at center */
+      transform: translateX(-50%);
+      opacity: 1;
+    }
+    20% {
+      left: -200%; /* Scroll to the left */
+      opacity: 0; /* Start to disappear */
+    }
+    30% {
+      left: 100%; /* Move to the right off-screen */
+      opacity: 0; /* Keep it hidden */
+    }
+    40% {
+      left: 300%; /* Reappear on the right, still hidden */
+      
+    }
+    60% {
+        opacity: 1;
+        left: 50%; /* Move back to center */
+      transform: translateX(-50%);
+      opacity: 1;
+    }
+    100% {
+      left: 50%; /* End at center */
+      transform: translateX(-50%);
+      opacity: 1;
+    }
+  }

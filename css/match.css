@@ -1,0 +1,59 @@
+.cardContainer
+{
+    position: absolute;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 1200px;
+    height: calc(100% - 300px);
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    justify-content: center;
+    align-content: center;
+    background-color: white;
+    
+}
+
+.rightChoice
+{
+    color: #8b8b8b;
+}
+
+.matchCard
+{
+    position: relative;
+    box-shadow: 5px 5px 20px #8b8b8b;
+    border-radius: 10px;
+    border: 1px solid #A4A4A4;
+    background-color: white;
+    font-size: 2rem;
+    text-align: center;
+}
+
+@media (max-height: 800px)
+{
+    .cardContainer
+    {
+        width: 100%;
+        height: 100%;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+}
+
+@keyframes flipCardAnim {
+    50%{
+        transform: scaleX(0%) scaleY(110%);
+    }
+    100%{
+        transform: scaleX(100%);
+    }
+}
+
+.cardFlipTrigger{
+    animation: flipCardAnim 0.25s linear forwards;
+}

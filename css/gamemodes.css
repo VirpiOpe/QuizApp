@@ -1,0 +1,26 @@
+.cardsContainer
+{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    justify-content: center;
+}
+
+.card{
+    height: 300px;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0px 5px 10px #dbdbdb;
+    transition: 0.4s;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.card:hover
+{
+    transition: 0.4s;
+    box-shadow: 0px 0px 20px #888888;
+    transform: scale(1.02);
+}

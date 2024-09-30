@@ -1,0 +1,32 @@
+#newQuizButton
+{
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    background-color: #1E90FF;
+    font-size: 37px;
+}
+
+.accountButton
+{
+    position: absolute;
+    background-color: transparent;
+}
+
+.accountButton:hover
+{
+    background-color: transparent;
+}
+
+.accountIcon
+{
+    position: absolute;
+    top: 100%;
+    transform: scale(1.5) translateY(-10%);
+    transition: 0.2s;
+}
+
+.accountIcon:hover
+{
+    transform: scale(1.8) translateY(-5%);
+}

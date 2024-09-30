@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hi</title>
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/slider/style.css" />
+    <link rel="stylesheet" href="css/gamemodes.css" />
+</head>
+  <body style="margin: 0px; padding: 0px">
+    <div class="topbar">
+      <h1 class="quizNameHeader">Sample quiz for chapter 5</h1>
+      <label class="switch" id="themeSwitch">
+        <input type="checkbox"></input>
+        <span class="slider round" id="colorModeSwitch"></span>
+      </label>
+    </div>
+    <div class="content">
+        <div class="cardsContainer">
+            <div class="card" id="gamemodeCardButton">
+                <img width="250px" src="assets/cardsLogo.svg"/>
+                <h1 style="font-family: Arial, Helvetica, sans-serif; margin-top: -25px; font-size: 40px; ">Kortit</h1>
+            </div>
+            <div class="card" id="gamemodeTypeButton">
+                <img width="350px" style="margin-top: -50px;" src="assets/typeLogo.svg"/>
+                <h1 style="font-family: Arial, Helvetica, sans-serif; margin-top: -75px; font-size: 40px; ">Kirjoitus</h1>
+            </div>
+            <div class="card" id="gamemodeMultichoiceButton">
+              <img width="230px" style="margin-top: -10px;" src="assets/multichoiceLogo.svg"/>
+              <h1 style="font-family: Arial, Helvetica, sans-serif; margin-top: 5px; font-size: 40px; ">Monivalinta</h1>
+          </div>
+          <div class="card" id="gamemodeMatchButton">
+            <img width="230px" style="margin-top: -10px;" src="assets/matchLogo.svg"/>
+            <h1 style="font-family: Arial, Helvetica, sans-serif; margin-top: 5px; font-size: 40px; ">Muistipeli</h1>
+        </div>
+            <div class="card" id="gamemodeExamButton">
+              <img width="180px" style="margin-top: 20px;" src="assets/examLogo.svg"/>
+              <h1 style="font-family: Arial, Helvetica, sans-serif; margin-top: 25px; font-size: 40px; ">Testi</h1>
+          </div>
+        </div>
+        
+        </div>
+    </div>
+    <script src="js/theme.js"></script>
+    <script src="js/gamemodes.js"></script>
+  </body>
+</html>

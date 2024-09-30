@@ -1,0 +1,102 @@
+.wordDiv
+{
+    position: relative;
+    width: 95%;
+    background-color: white;
+    height: 300px;
+    border-radius: 10px;
+    border: 1px solid #A4A4A4;
+    left: 50%;
+    margin-top: 10px;
+    transform: translateX(-50%);
+    box-shadow: 5px 5px 20px #8b8b8b;
+}
+.choiceDiv
+{
+    position: relative;
+    width: 95%;
+    background-color: white;
+    height: 500px;
+    border-radius: 10px;
+    border: 1px solid #A4A4A4;
+    left: 50%;
+    margin-top: 10px;
+    transform: translateX(-50%);
+    box-shadow: 5px 5px 20px #8b8b8b;
+}
+
+
+.wordInput
+{
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 43px;
+    transition: 0.2s;
+    border-radius: 60px;
+    border: 1px solid #A4A4A4;
+    font-size: 25px;
+    color: #4F4F4F;
+    padding-left: 20px;
+}
+.wordHeader
+{
+    position: absolute;
+    margin-left: 10%;
+    top: 60%;
+    margin-top: -150px;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #4F4F4F;
+}
+.submitBtn
+{
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 50px;
+    font-size: 22px;
+    border-radius: 10px;
+    z-index: 999;
+}.submitBtn:disabled{visibility: hidden;}
+.correctText
+{
+    position: relative;
+    top: 125px;
+    margin-left: 10%;
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.overview
+{
+    position:absolute;
+    width: 350px;
+    height: 350px;
+    background-color: white;
+    border: 1px solid #A4A4A4;
+    box-shadow: 5px 5px 20px #8b8b8b;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    margin-top: 85px;
+}
+
+.topMargin
+{
+    margin-top: 400px;
+}
+
+.cWord
+{
+    position: absolute;
+    right: 10%;
+    top: 60%;
+    margin-top: -140px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: red;
+}

@@ -1,0 +1,50 @@
+#quizNameInput
+{
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 90px;
+    width: calc(100% - 200px);
+    font-size: 20px;
+    height: 15px;
+}
+
+.quizWordsInputDiv
+{
+    position: relative;
+    width: 90%;
+    margin-left: 5%;
+    background-color: aqua;
+    height: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 10px;
+    margin-top: 20px;
+
+}
+
+.quizWordsInputDivStyle
+{
+    position: relative;
+    width: 90%;
+    margin-left: 5%;
+    height: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+#addQuestionButton
+{
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 50px;
+    font-size: 22px;
+    border-radius: 10px;
+    z-index: 999;
+}
