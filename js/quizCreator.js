@@ -19,6 +19,8 @@ const currentUrl = new URL(location.href);
 const quizIdSearch = currentUrl.searchParams.get("quizid");
 
 const back = document.querySelector(".backButton");
+const linkh = document.querySelector(".linkH");
+linkh.textContent = "https://virpiope.github.io/QuizApp/gamemodes.html?quizid="+quizIdSearch;
 back.addEventListener("click", ()=>{window.location="/QuizApp/adminDashboard.html"});
 
 async function getQuizData(quizId) {
