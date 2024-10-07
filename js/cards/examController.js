@@ -5,6 +5,9 @@ const quizIdSearch = currentUrl.searchParams.get("quizid");
 const overviewDiv = document.querySelector(".overview");
 overviewDiv.style.visibility = "hidden";
 
+const langSearch = currentUrl.searchParams.get("l");
+const allowedGamemodesSearch = currentUrl.searchParams.get("ag");
+
 var words1;
 var words2;
 
@@ -12,15 +15,16 @@ var wordIds = [];
 
 var questionDivs = []
 
-var lang = 1;
+var lang = langSearch;
 var fetchedData;
+var allowedGamemodes = allowedGamemodesSearch; //0both 1type 2select
 
 submitButton.addEventListener("click", () =>{
     checkAnswers();
 });
 
 const backButton = document.querySelector(".backButton");
-backButton.addEventListener("click", ()=>{window.location="/gamemodes.html?quizid="+quizIdSearch;})
+backButton.addEventListener("click", ()=>{window.location="/QuizApp/gamemodes.html?quizid="+quizIdSearch;})
 
 async function getQuizData(quizId) {
     const url = "https://roudes.eu.pythonanywhere.com/getquiz?quizid=" + quizId;
@@ -28,7 +32,7 @@ async function getQuizData(quizId) {
       const response = await fetch(url);
       if (response.status == 400)
       {
-        window.location = "/error.html";
+        window.location = "/QuizApp/error.html";
       }
       fetchedData = await response.json();
       words1 = fetchedData.words1;
@@ -145,14 +149,26 @@ function createQuizElements(questionAmount ,useWrite, useMultichoice)
         res.push(words1[rand]);
         wordIds.push(rand);
         var randGMode = Math.round(Math.random());
-        if (randGMode == 0)
+        if (allowedGamemodes == 0)
         {
-            createMultichoice(rand);
+            if (randGMode == 0)
+            {
+                createMultichoice(rand);
+            }
+            else
+            {
+                createWordInput(rand);
+            }
         }
-        else
+        else if(allowedGamemodes == 1)
         {
             createWordInput(rand);
         }
+        else if(allowedGamemodes == 2)
+        {
+            createMultichoice(rand);
+        }
+        
         
     }
     //console.log(res);

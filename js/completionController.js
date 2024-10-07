@@ -4,5 +4,5 @@ const quizIdSearch = currentUrl.searchParams.get("quizid");
 const backBtn = document.querySelector("#backBtn");
 
 backBtn.addEventListener("click", () =>{
-    window.location = "/gamemodes.html?quizid="+quizIdSearch;
+    window.location = "/QuizApp/gamemodes.html?quizid="+quizIdSearch;
 });

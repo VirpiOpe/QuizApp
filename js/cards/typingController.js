@@ -30,7 +30,7 @@ async function getQuizData(quizId) {
       const response = await fetch(url);
       if (response.status == 400)
       {
-        window.location = "/error.html";
+        window.location = "/QuizApp/error.html";
       }
       fetchedData = await response.json();
       words1 = fetchedData.words1;
@@ -46,7 +46,7 @@ async function getQuizData(quizId) {
     }
 }
 
-backButton.addEventListener("click", ()=>{window.location="/gamemodes.html?quizid="+quizIdSearch;})
+backButton.addEventListener("click", ()=>{window.location="/QuizApp/gamemodes.html?quizid="+quizIdSearch;})
 
 swapLangBtn.addEventListener("click", () =>{
     if (lang == 0)
@@ -116,7 +116,7 @@ submitButton.addEventListener("click", () =>{
         }
         else
         {
-            window.location = "/completion.html?quizid="+quizIdSearch;
+            window.location = "/QuizApp/completion.html?quizid="+quizIdSearch;
         }
         
     }

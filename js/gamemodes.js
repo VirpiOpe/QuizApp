@@ -41,7 +41,7 @@ matchBtn.addEventListener("click", () =>{
     document.location = "/QuizApp/match.html?quizid="+quizIdSearch;
 });
 examBtn.addEventListener("click", () =>{
-    document.location = "/QuizApp/exam.html?quizid="+quizIdSearch;
+    document.location = "/QuizApp/examOptions.html?quizid="+quizIdSearch;
 });
 
 getQuizData(quizIdSearch)

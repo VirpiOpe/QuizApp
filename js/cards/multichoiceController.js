@@ -7,9 +7,10 @@ const wordHeader = document.querySelector(".wordHeader");
 const choiceDiv = document.querySelector(".choiceContainer");
 const choiceButtons = document.querySelector(".choiceButtons");
 const swapLangBtn = document.querySelector(".swapLangBtn");
+const submitButton = document.querySelector("#submitButton");
 
 const backButton = document.querySelector(".backButton");
-backButton.addEventListener("click", ()=>{window.location="/gamemodes.html?quizid="+quizIdSearch;})
+backButton.addEventListener("click", ()=>{window.location="/QuizApp/gamemodes.html?quizid="+quizIdSearch;})
 
 const currentUrl = new URL(location.href);
 const quizIdSearch = currentUrl.searchParams.get("quizid");
@@ -23,6 +24,8 @@ var fullJson;
 var usedRandoms = [];
 var rightWord;
 var lang = 0;
+var currentlySelected = -1;
+var state = 0
 
 async function getQuizData(quizId) {
     const url = "https://roudes.eu.pythonanywhere.com/getquiz?quizid=" + quizId;
@@ -30,7 +33,7 @@ async function getQuizData(quizId) {
       const response = await fetch(url);
       if (response.status == 400)
       {
-        window.location = "/error.html";
+        window.location = "/QuizApp/error.html";
       }
       fetchedData = await response.json();
       words1 = fetchedData.words1;
@@ -44,6 +47,21 @@ async function getQuizData(quizId) {
         return null;
     }
 }
+
+submitButton.addEventListener("click", () =>{
+    if (state == 0)
+    {
+        checkWord();
+        submitButton.textContent = "Seuraava";
+        state = 1;
+    }
+    else if(state == 1)
+    {
+        handleNextWord();
+        state = 0;
+    }
+    
+});
 
 swapLangBtn.addEventListener("click", () =>{
     if (lang == 0)
@@ -62,53 +80,43 @@ swapLangBtn.addEventListener("click", () =>{
 });
 
 cBtn1.addEventListener("click", () =>{
-    if (rightWord == 0)
-    {
-        handleNextWord();
-    }
-    else
-    {
-        applyWrongStyle();
-    }
+    cBtn1.classList.add("selected");
+    currentlySelected = 0;
 });
 cBtn2.addEventListener("click", () =>{
-    if (rightWord == 1)
-    {
-        handleNextWord();
-    }
-    else
-    {
-        applyWrongStyle();
-    }
+    cBtn2.classList.add("selected");
+    currentlySelected = 1;
+
 });
 cBtn3.addEventListener("click", () =>{
-    if (rightWord == 2)
-    {
-        handleNextWord();
-    }
-    else
-    {
-        applyWrongStyle();
-    }
+    cBtn3.classList.add("selected");
+    currentlySelected = 2;
+
 });
 cBtn4.addEventListener("click", () =>{
-    if (rightWord == 3)
+    cBtn4.classList.add("selected");
+    currentlySelected = 3;
+
+});
+
+function checkWord()
+{
+    if (rightWord == currentlySelected)
     {
-        handleNextWord();
+        applyRightStyle();
     }
     else
     {
         applyWrongStyle();
     }
-});
+}
 
 function handleNextWord()
 {
     if(currentWord >= quizLength-1)
     {
-        window.location = "/completion.html?quizid="+quizIdSearch;
+        window.location = "/QuizApp/completion.html?quizid="+quizIdSearch;
     }
-    applyRightStyle();
     setTimeout(() => { 
         currentWord++;
         shuffleWords();
@@ -117,10 +125,14 @@ function handleNextWord()
         choiceDiv.addEventListener("animationend", (e) =>{
             
             choiceDiv.classList.remove("animate");
-            console.log("removed anim")
+            console.log("removed anim");
+            cBtn1.classList.remove("selected");
+            cBtn2.classList.remove("selected");
+            cBtn3.classList.remove("selected");
+            cBtn4.classList.remove("selected");
             
         });
-    }, 2000);
+    }, 300);
     
 }
 

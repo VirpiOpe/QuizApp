@@ -4,7 +4,7 @@ const currentUrl = new URL(location.href);
 const quizIdSearch = currentUrl.searchParams.get("quizid");
 
 const backButton = document.querySelector(".backButton");
-backButton.addEventListener("click", ()=>{window.location="/gamemodes.html?quizid="+quizIdSearch;})
+backButton.addEventListener("click", ()=>{window.location="/QuizApp/gamemodes.html?quizid="+quizIdSearch;})
 
 var quizLength = 0;
 var currentCard = 0;
@@ -24,7 +24,7 @@ async function getQuizData(quizId) {
       const response = await fetch(url);
       if (response.status == 400)
       {
-        window.location = "/error.html";
+        window.location = "/QuizApp/error.html";
       }
       fetchedData = await response.json();
       words1 = fetchedData.words1;
@@ -155,7 +155,7 @@ function notValid(first, second)
         setTimeout(() => {
             second.classList.remove('cardFlipTrigger');
         }, 300);
-    }, 1000) 
+    }, 2000) 
     cardStage = 0;
 }
 

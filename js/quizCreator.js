@@ -12,7 +12,7 @@ const publishQuizButton = document.querySelector(".publishQuizButton");
 const quizNameInput = document.querySelector("#quizNameInput");
 const quizLangSelect1 = document.querySelector("#quizLangSelect1");
 const quizLangSelect2 = document.querySelector("#quizLangSelect2")
-
+const pwI = document.querySelector("#pwI");
 publishQuizButton.addEventListener("click", createQuiz)
 
 const currentUrl = new URL(location.href);
@@ -24,7 +24,7 @@ async function getQuizData(quizId) {
       const response = await fetch(url);
       if (response.status == 400)
       {
-        window.location = "/quizCreator.html?quizid=new";
+        window.location = "/QuizApp/quizCreator.html?quizid=new";
       }
       fetchedData = await response.json();
       return fetchedData;
@@ -148,7 +148,8 @@ function sendQuiz(quizJson)
         qId : quizId,
         isPrivate : false,
         quizName : quizJson.name,
-        quizData : JSON.stringify(quizJson)
+        quizData : JSON.stringify(quizJson),
+        auth : pwI.value
     };
 
     console.log(data.quizData)
@@ -162,7 +163,7 @@ function sendQuiz(quizJson)
     .then(data => {
         console.log('Success:', data); 
         
-        window.location = "/quizCreator.html?quizid="+quizId;
+        window.location = "/QuizApp/quizCreator.html?quizid="+quizId;
     })
     .catch(error => {
         console.error('Error:', error); 

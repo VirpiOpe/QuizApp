@@ -22,7 +22,7 @@ async function getQuizData(quizId) {
       const response = await fetch(url);
       if (response.status == 400)
       {
-        window.location = "/error.html";
+        window.location = "/QuizApp/error.html";
       }
       fetchedData = await response.json();
       words1 = fetchedData.words1;
