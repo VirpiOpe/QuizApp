@@ -18,6 +18,9 @@ publishQuizButton.addEventListener("click", createQuiz)
 const currentUrl = new URL(location.href);
 const quizIdSearch = currentUrl.searchParams.get("quizid");
 
+const back = document.querySelector(".backButton");
+back.addEventListener("click", ()=>{window.location="/QuizApp/adminDashboard.html"});
+
 async function getQuizData(quizId) {
     const url = "https://roudes.eu.pythonanywhere.com/getquiz?quizid=" + quizId;
     try {
